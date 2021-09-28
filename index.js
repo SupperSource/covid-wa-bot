@@ -9,7 +9,8 @@ function start(client) {
     const summary = res.data.data.summary;
     client.onMessage(async message => {
       if (message.body === 'Hi') {
-        await client.sendText(message.from, `Hi, \n\n Confirmed *${summary.total}* 🏥 \nDeaths *${summary.deaths}* 🏴‍☠️\nRecovered *${summary.discharged}* 🥳`);
+        let reply = `Hi, \n\n Confirmed *${summary.total}* 🏥 \nDeaths *${summary.deaths}* 🏴‍☠️\nRecovered *${summary.discharged}* 🥳`
+        await client.sendText(message.from, reply);
       }
     });
   });
